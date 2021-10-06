@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th = "http:// www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Thymeleaf 링크처리 예제 페이지</h1>
+  <div>
+    <a th:href="@{/thymeleaf/ex01}">예제1 페이지 이동</a>  <!-- 애플리케이션 내부의 경로로써 spring의 루트 디렉터리는 / 이기때문에 아래 경로를 나열-->
+  </div>
+  <div>
+    <a th:href="@{https://www.thymeleaf.org/}">thymeleaf 공식페이지 이동</a> <!-- 애플리케이션 외부의 사이트에 접근하기 위한 절대 경로를 입력 -->
+  </div>
+
+  <div>
+    <a th:href="@{/thymeleaf/ex06(param1 = '파라미터 데이터1', param2 = '파라미터 데이터2')}">thymeleaf 파라미터 전달</a> <!-- 다른 페이지로 이동 시 파라미터를 전달할 경우 전달하는 경로의 끝에 key value 값으로 입력-->
+  </div>
+</body>
+</html>
