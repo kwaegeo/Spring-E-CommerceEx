@@ -10,7 +10,7 @@ import java.util.List;
 
 //2개의 제네릭 타입을 사용하는데 첫 번째에는 엔티티 타입 클래스, 두번째엔 기본키의 타입을 넣음 우리의 상품아이디는 Long형이여서 Long으로
 //JPA Repository는 기본적인 CRUD 및 페이징 처리를 위한 메소드가 정의되어 있다.
-public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item> {
+public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredicateExecutor<Item>, ItemRepositoryCustom {
     List<Item> findByItemNm(String itemNm); //상품의 품번을 입력받아 조회하는 메서드
 
     List<Item> findByItemNmOrItemDetail(String itemNm, String itemDetail); //상품의 품번 혹은 상세정보로 조회하기 위한 메서드
